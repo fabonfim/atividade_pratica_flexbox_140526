@@ -1,0 +1,34 @@
+body {
+    background-color: rgb(234, 205, 253);
+}
+
+#container_ex1 .filho1{
+    background-color: rgb(204, 55, 250);
+}
+
+#container_ex1 .filho2{
+    background-color: rgb(252, 40, 241);
+}
+
+#container_ex1 .filho3{
+    background-color: rgb(100, 100, 253);
+}
+
+#container_ex1 .filho4{
+    background-color: rgb(247, 122, 252);
+}
+
+#container_ex1 .filho5{
+    background-color: rgb(253, 170, 253);
+}
+
+#container_ex1 .tamanho {
+    width: 80px;
+    height: 80px;
+}
+
+#container_ex1{
+    background-color: white;
+    display: flex;
+    width: 500px;
+}
