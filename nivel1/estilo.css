@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(234, 205, 253);
+    background-color: #eacdfd;
 }
 
 #container_ex1 .filho1{
@@ -31,4 +31,6 @@ body {
     background-color: white;
     display: flex;
     width: 500px;
+    
 }
+
