@@ -1,0 +1,36 @@
+body {
+    background-color: #eacdfd;
+}
+
+#container_ex2 .filho1{
+    background-color: #cc37fa;
+}
+
+#container_ex2 .filho2{
+    background-color: #fc28f1;
+}
+
+#container_ex2 .filho3{
+    background-color: #6464fd;
+}
+
+#container_ex2 .filho4{
+    background-color: #f77afc;
+}
+
+#container_ex2 .filho5{
+    background-color: #fdaafd;
+}
+
+#container_ex2 .tamanho {
+    width: 80px;
+    height: 80px;
+}
+
+#container_ex2{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    
+}

@@ -1,0 +1,109 @@
+body {
+    background-color: #eacdfd;
+}
+
+#container_ex3 .filho1{
+    background-color: #cc37fa;
+}
+
+#container_ex3 .filho2{
+    background-color: #fc28f1;
+}
+
+#container_ex3 .filho3{
+    background-color: #6464fd;
+}
+
+#container_ex3 .filho4{
+    background-color: #f77afc;
+}
+
+#container_ex3 .filho5{
+    background-color: #fdaafd;
+}
+
+#container_ex3 .tamanho {
+    width: 60px;
+    
+}
+
+#container_ex3{
+    background-color: white;
+    display: flex;
+    width: 400px;
+    
+}
+
+.tamanho{
+    width: 60px;
+}
+
+
+
+.filho1{
+    background-color: #00ffff;
+    
+}
+
+.filho2{
+    background-color: #b3ff00;
+}
+
+
+.filho3{
+    background-color: #fa5ded;
+}
+
+
+.filho4{
+    background-color: #ec8a63;
+}
+
+
+
+#container_start{
+    display: flex;
+    justify-content: flex-start;
+   background-color: white;
+}
+       
+
+
+#container_end{
+    display: flex;
+    justify-content: flex-end;
+    background-color: white;
+}
+        
+#container_center{
+    justify-content: center;
+    display: flex;
+    background-color: white;
+}
+
+#container_between{
+    justify-content:space-between;
+    display: flex;
+    background-color: white;
+}
+
+#container_around{
+    justify-content:space-around;
+    display: flex;
+    background-color: white;
+}
+
+#container_evenly{
+    justify-content: space-evenly;
+    display: flex;
+    background-color: white;
+}
+
+
+.cards{
+    border-radius: 0.1%;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+}
