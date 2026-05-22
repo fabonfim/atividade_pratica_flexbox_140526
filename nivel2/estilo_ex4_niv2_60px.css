@@ -1,0 +1,108 @@
+body {
+    background-color: #eacdfd;
+}
+
+#container_ex4 .filho1{
+    background-color: #cc37fa;
+}
+
+#container_ex4 .filho2{
+    background-color: #fc28f1;
+    
+}
+
+#container_ex4 .filho3{
+    background-color: #6464fd;
+}
+
+#container_ex4 .filho4{
+    background-color: #f77afc;
+}
+
+#container_ex4 .filho5{
+    background-color: #fdaafd;
+}
+
+#container_ex4 .tamanho {
+    width: 60px;
+    
+}
+
+#container_ex4{
+    background-color: white;
+    display: flex;
+    height: 300px;
+    
+}
+
+.tamanho{
+    width: 60px;
+}
+
+.tamanhopai{
+    height: 300px;
+    background-color: #f8fcc8;
+}
+
+
+.filho1{
+    background-color: #00ffff;
+    
+}
+
+.filho2{
+    background-color: #b3ff00;
+}
+
+
+.filho3{
+    background-color: #fa5ded;
+}
+
+
+.filho4{
+    background-color: #ec8a63;
+}
+
+
+
+#container_stretch{
+    display: flex;
+    align-items:stretch;
+    background-color: white;
+}
+       
+
+
+#container_flex-start{
+    display: flex;
+    align-items: flex-start;
+    background-color: white;
+}
+        
+#container_flex-end{
+    display: flex;
+    align-items:flex-end;
+    background-color: white;
+}
+
+#container_center{
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+#container_baseline{
+    display: flex;
+    align-items: baseline;
+    background-color: white;
+}
+
+
+.cards{
+    border-radius: 0.1%;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+}
