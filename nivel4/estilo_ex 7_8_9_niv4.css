@@ -1,0 +1,96 @@
+body {
+    background-color: #eacdfd;
+    font-family: Arial, sans-serif;
+}
+
+/* ========================================================
+   CONFIGURAÇÕES GERAIS DOS CARDS E FILHOS
+   ======================================================== */
+
+/* Define o visual dos blocos brancos que agrupam cada exercício */
+.cards {
+    border-radius: 4px;
+    border: 1px solid black;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #ffffff80; /* Fundo branco com transparência */
+}
+
+/* Cores de fundo e fontes para identificar cada caixinha */
+.filho1 { background-color: #00ffff; padding: 10px; color: black; font-weight: bold; }
+.filho2 { background-color: #b3ff00; padding: 10px; color: black; font-weight: bold; }
+.filho3 { background-color: #fa5ded; padding: 10px; color: black; font-weight: bold; }
+.filho4 { background-color: #ec8a63; padding: 10px; color: black; font-weight: bold; }
+
+
+/* ========================================================
+   EXERCÍCIO 7 — FLEX-GROW (CRESCIMENTO PROPORCIONAL)
+   ======================================================== */
+
+/* O container pai ativa o Flexbox e define a largura exata de 600px */
+.pai_ex7 {
+    display: flex;
+    width: 600px;           
+    background-color: white;
+}
+
+/* Configuração dos itens: largura base zero força o flex-grow a calcular tudo do zero */
+#container_flex_grow div {
+    width: 0; 
+    height: 60px;
+    box-sizing: border-box;
+}
+
+/* Distribuição proporcional: O container de 600px será dividido em 4 partes de 150px */
+#container_flex_grow .filho1 { flex-grow: 1; } /* Fica com 1 parte (150px) */
+#container_flex_grow .filho2 { flex-grow: 2; } /* Fica com 2 partes (300px - O DOBRO!) */
+#container_flex_grow .filho3 { flex-grow: 1; } /* Fica com 1 parte (150px) */
+
+
+/* ========================================================
+   EXERCÍCIO 8 — FLEX-BASIS E FLEX-SHRINK
+   ======================================================== */
+
+/* Container de 500px. Como os filhos pedem 600px no total, eles vão encolher */
+.pai_ex8 {
+    display: flex;
+    width: 500px;           
+    background-color: white;
+}
+
+/* Todos começam exigindo a base de 200px */
+#container_fbs div {
+    flex-basis: 200px;      
+    height: 80px;
+    box-sizing: border-box;
+}
+
+/* Controla o ritmo de encolhimento para fechar os 500px exatos na tela */
+#container_fbs .filho1 { flex-shrink: 2; } /* Encolhe o dobro (fica menor de todas) */
+#container_fbs .filho2 { flex-shrink: 1; } /* Encolhe no ritmo padrão */
+#container_fbs .filho3 { flex-shrink: 0; } /* NÃO ENCOLHE. Mantém os 200px perfeitos */
+
+
+/* ========================================================
+   EXERCÍCIO 9 — ORDER E ALIGN-SELF
+   ======================================================== */
+
+/* Altura de 200px fixada para permitir a visualização do alinhamento vertical */
+.pai_ex9 {
+    display: flex;
+    width: 500px;
+    height: 200px;          
+    background-color: white;
+}
+
+/* Define o tamanho fixo inicial das caixas */
+#container_oas div {
+    width: 100px;
+    height: 60px;
+}
+
+/* REORDENAÇÃO VISUAL E ALINHAMENTO VERTICAL INDEPENDENTE */
+#container_oas .filho3 { order: 1; align-self: center; }     /* Primeira da fila | Alinhada ao CENTRO */
+#container_oas .filho2 { order: 2; align-self: flex-start; } /* Segunda da fila  | Alinhada ao TOPO */
+#container_oas .filho4 { order: 3; align-self: flex-end; }   /* Terceira da fila | Alinhada à BASE */
+#container_oas .filho1 { order: 4; }                         /* Última da fila   | Alinhada ao TOPO (padrão) */
