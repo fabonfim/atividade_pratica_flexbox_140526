@@ -2,103 +2,49 @@ body {
     background-color: #eacdfd;
 }
 
-#container_ex6 .filho1{
-    background-color: #cc37fa;
-}
-
-#container_ex6 .filho2{
-    background-color: #fc28f1;
-}
-
-#container_ex6 .filho3{
-    background-color: #6464fd;
-}
-
-#container_ex6 .filho4{
-    background-color: #f77afc;
-}
-
-#container_ex6 .filho5{
-    background-color: #fdaafd;
-}
-
-#container_ex6 .filho6{
-    background-color: #adf506;
-}
-
-
-#container_ex6 .tamanho {
-    width: 120px;
-    
-    
-}
-
-#container_ex6{
-    background-color: white;
-    display: flex;
-    width: 400px;
-    
-}
+/* Tamanho fixo dos quadradinhos filhos (120px) */
 
 .tamanho{
     width: 120px;
     height: 120px;
 }
 
+/* Tamanho fixo do container pai (400px) */
+
 .tamanhopai{
     width: 400px;
     background-color: #f8fcc8;
 }
 
+/* Cores de cada uma das 6 div coloridas */
 
-.filho1{
-    background-color: #00ffff;
-    
-}
+.filho1 { background-color: #00ffff; }
+.filho2 { background-color: #b3ff00; }
+.filho3 { background-color: #fa5ded; }
+.filho4 { background-color: #ec8a63; }
+.filho5 { background-color: #2e0101; }
+.filho6 { background-color: #c4045d; }
 
-.filho2{
-    background-color: #b3ff00;
-}
-
-
-.filho3{
-    background-color: #fa5ded;
-}
-
-
-.filho4{
-    background-color: #ec8a63;
-}
-
-.filho5{
-    background-color: #2e0101;
-}
-
-.filho6{
-    background-color: #c4045d;
-}
-
+/* O Container principal usando o GAP que o professor pediu */
 
 #container_wrap{
     display: flex;
     flex-wrap: wrap;
+    gap: 16px;   /* Aplica 16px de espaço entre as linhas e colunas */             
     background-color: white;
 }
        
+  
+/* Bordas dos cards de teste */
 
-
-#container_wja{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: white;
-}
-        
 .cards{
-    border-radius: 0.1%;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid black;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #ffffff80;
 }
+
+/* Para meu entendimento: Como o professor pediu apenas para aplicar o gap: 16px; com flex-wrap e observar a galeria, 
+não precisa daquele segundo bloco (#container_wja) que mistura com space-between. 
+Se o space-between tentar forçar espaço e o gap também, eles podem brigar visualmente.*/
