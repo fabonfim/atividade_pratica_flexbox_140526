@@ -1,0 +1,221 @@
+<!DOCTYPE html> <!-- Diz ao navegador que estamos usando a versão mais recente do HTML (HTML5) -->
+<html lang="pt-BR"> <!-- Define o idioma da página. Importante para SEO (Google) e leitores de tela -->
+<head>
+    <!-- O <head> é a "cabeça" do site. As configurações aqui não aparecem na tela, mas fazem o site funcionar -->
+    <meta charset="UTF-8"> <!-- Garante que acentos e caracteres especiais (ç, ã) funcionem corretamente -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna o site responsivo em celulares -->
+    <title>AXION - Nexus 1.0</title>
+    
+    <!-- Importando as fontes do Google Fonts para deixar o texto mais bonito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Importando a biblioteca Font Awesome para usar os ícones de lupa, carrinho, etc. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 🌟 A MÁGICA ACONTECE AQUI: Este comando conecta o seu HTML ao seu arquivo CSS externo -->
+    <link rel="stylesheet" href="testelayout.css">
+</head>
+<body>
+    <!-- O <body> é o "corpo" do site. Tudo o que está aqui dentro aparecerá na tela do usuário -->
+
+    <!-- div: Um contêiner genérico para agrupar elementos. Usamos a classe para estilizá-lo no CSS -->
+    <div class="container-principal">
+        
+        <!-- header: Tag semântica que define o cabeçalho principal da página -->
+        <header class="header">
+            <div class="logo">AXION</div>
+            
+            <!-- nav: Tag semântica para links de navegação (menu) -->
+            <nav class="menu-navegacao">
+                <!-- a: Tag de âncora (link). O href="#" indica que o link não vai para lugar nenhum ainda -->
+                <a href="#">LANÇAMENTOS</a>
+                <a href="#">MASCULINO</a>
+                <a href="#">FEMININO</a>
+                <a href="#">ACESSÓRIOS</a>
+            </nav>
+
+            <div class="icones-header">
+                <!-- i: Geralmente usado para ícones. As classes 'fa-solid' dizem qual ícone carregar da Font Awesome -->
+                <i class="fa-solid fa-magnifying-glass icone"></i>
+                
+                <div class="icone">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <!-- span: Contêiner de texto curto usado para estilizar um pedaço específico (a bolinha vermelha do carrinho) -->
+                    <span class="badge-carrinho">2</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- section: Tag semântica que define uma seção importante da página. Aqui é o Banner (Hero) -->
+        <section class="hero">
+            
+            <!-- button: Botão clicável -->
+            <button class="btn-edicao-limitada">EDIÇÃO LIMITADA</button>
+
+            <!-- Textos do lado esquerdo -->
+            <div class="hero-conteudo">
+                <span class="tag-novo">NOVO LANÇAMENTO</span>
+                <!-- h1: O título mais importante da página (só deve ter um por página) -->
+                <h1 class="titulo-hero">AXION<br>NEXUS 1.0</h1>
+                <!-- p: Parágrafo para descrições longas -->
+                <p class="descricao-hero">Performance elevada ao limite.<br>Estilo que transcende.</p>
+                <div class="preco-hero">R$ 899,90</div>
+                
+                <button class="btn-primario">
+                    COMPRAR AGORA <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <span class="frete-texto">FRETE GRÁTIS PARA TODO BRASIL</span>
+            </div>
+
+            <!-- img: Tag para exibir imagens. O atributo 'src' diz onde a imagem está. 'alt' é a descrição caso a imagem falhe -->
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop" alt="Tênis Axion Nexus 1.0 Vermelho" class="hero-imagem">
+            
+        </section>
+
+        <!-- Seção onde ficam os 4 cards de produtos -->
+        <section class="destaques">
+            
+            <div class="destaques-header">
+                <!-- h2: Título de segunda importância, usado para abrir novas seções -->
+                <h2 class="destaques-titulo">DESTAQUES</h2>
+                <a href="#" class="destaques-link">VER TODOS <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- O Grid que vai organizar os cards lado a lado -->
+            <div class="cards-grid">
+                
+                <!-- Primeiro Card -->
+                <div class="card">
+                    <span class="card-tag">EDIÇÃO LIMITADA</span>
+                    <div class="card-imagem-container">
+                        <img src="https://i.imgur.com/Hl47kSi.jpeg" alt="Tênis 1" class="card-imagem">
+                    </div>
+                    <div class="card-info">
+                        <!-- h3: Título de terceira importância, usado para os nomes dos produtos dentro da seção -->
+                        <h3 class="card-nome">AXION NEXUS 1.0</h3>
+                        <div class="card-cores">
+                            <div class="cor-bolinha cor-preta"></div>
+                            <div class="cor-bolinha cor-branca"></div>
+                            <div class="cor-bolinha cor-bege"></div>
+                        </div>
+                        <div class="card-rodape">
+                            <span class="card-preco">R$ 899,90</span>
+                            <button class="btn-circular"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segundo Card -->
+                <div class="card">
+                    <span class="card-tag">EDIÇÃO LIMITADA</span>
+                    <div class="card-imagem-container">
+                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=600&auto=format&fit=crop" alt="Tênis 2" class="card-imagem">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-nome">AXION VERTEX 2.0</h3>
+                        <div class="card-cores">
+                            <div class="cor-bolinha cor-preta"></div>
+                            <div class="cor-bolinha cor-branca"></div>
+                            <div class="cor-bolinha cor-bege"></div>
+                        </div>
+                        <div class="card-rodape">
+                            <span class="card-preco">R$ 799,90</span>
+                            <button class="btn-circular"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terceiro Card -->
+                <div class="card">
+                    <span class="card-tag">EDIÇÃO LIMITADA</span>
+                    <div class="card-imagem-container">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=600&auto=format&fit=crop" alt="Tênis 3" class="card-imagem">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-nome">AXION HORIZON MID</h3>
+                        <div class="card-cores">
+                            <div class="cor-bolinha cor-preta"></div>
+                            <div class="cor-bolinha cor-branca"></div>
+                            <div class="cor-bolinha cor-bege"></div>
+                        </div>
+                        <div class="card-rodape">
+                            <span class="card-preco">R$ 949,90</span>
+                            <button class="btn-circular"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quarto Card -->
+                <div class="card">
+                    <span class="card-tag">EDIÇÃO LIMITADA</span>
+                    <div class="card-imagem-container">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=600&auto=format&fit=crop" alt="Tênis 4" class="card-imagem">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-nome">AXION PRIME 1.0</h3>
+                        <div class="card-cores">
+                            <div class="cor-bolinha cor-preta"></div>
+                            <div class="cor-bolinha cor-branca"></div>
+                            <div class="cor-bolinha cor-bege"></div>
+                        </div>
+                        <div class="card-rodape">
+                            <span class="card-preco">R$ 849,90</span>
+                            <button class="btn-circular"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer / Rodapé de benefícios -->
+        <section class="beneficios">
+            
+            <div class="beneficio-item">
+                <div class="beneficio-icone">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <div class="beneficio-textos">
+                    <span class="beneficio-titulo">FRETE GRÁTIS</span>
+                    <span class="beneficio-subtitulo">Para todo o Brasil</span>
+                </div>
+            </div>
+
+            <div class="beneficio-item">
+                <div class="beneficio-icone">
+                    <i class="fa-solid fa-rotate-left"></i>
+                </div>
+                <div class="beneficio-textos">
+                    <span class="beneficio-titulo">TROCA FÁCIL</span>
+                    <span class="beneficio-subtitulo">Primeira troca sem custo</span>
+                </div>
+            </div>
+
+            <div class="beneficio-item">
+                <div class="beneficio-icone">
+                    <i class="fa-regular fa-credit-card"></i>
+                </div>
+                <div class="beneficio-textos">
+                    <span class="beneficio-titulo">PARCELE EM ATÉ 10X</span>
+                    <span class="beneficio-subtitulo">Sem juros no cartão</span>
+                </div>
+            </div>
+
+            <div class="beneficio-item">
+                <div class="beneficio-icone">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="beneficio-textos">
+                    <span class="beneficio-titulo">SITE 100% SEGURO</span>
+                    <span class="beneficio-subtitulo">Seus dados protegidos</span>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+</html>

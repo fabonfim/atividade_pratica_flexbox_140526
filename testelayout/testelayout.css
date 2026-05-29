@@ -1,0 +1,491 @@
+/* ==========================================================================
+    1. VARIÁVEIS CSS E RESET BÁSICO
+    ========================================================================== */
+
+/* O ':root' guarda "variáveis". Assim, se você quiser mudar a cor laranja para azul, 
+    basta mudar aqui uma vez e o site todo atualiza sozinho. */
+    :root {
+        --cor-fundo-site: #050505;       
+        --cor-fundo-container: #111111;  
+        --cor-primaria: #FF4500;         
+        --cor-primaria-hover: #E03E00;   
+        --cor-texto-principal: #FFFFFF;  
+        --cor-texto-secundario: #A0A0A0; 
+        --cor-borda: #222222;            
+        --fonte-titulo: 'Oswald', sans-serif; 
+        --fonte-texto: 'Inter', sans-serif;   
+    }
+    
+    /* O seletor '*' (asterisco) seleciona TODOS os elementos da página.
+        Nós zeramos as margens e paddings padrão dos navegadores para termos controle total. */
+    * {
+        margin: 0;
+        padding: 0;
+        /* Faz com que bordas e espaçamentos internos não aumentem o tamanho final dos blocos */
+        box-sizing: border-box; 
+    }
+    
+    /* Regras gerais para a página inteira */
+    body {
+        background-color: var(--cor-fundo-site);
+        color: var(--cor-texto-principal);
+        font-family: var(--fonte-texto);
+        /* 'display: flex' transforma o body em uma caixa flexível, permitindo centralizar coisas fácil */
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        padding: 40px 20px; /* Cria um "respiro" nas laterais e topo/baixo em telas menores */
+        min-height: 100vh; /* Garante que ocupe pelo menos 100% da altura da tela (Viewport Height) */
+    }
+    
+    /* ==========================================================================
+        2. CONTAINER PRINCIPAL (A "Caixa" com bordas arredondadas)
+        ========================================================================== */
+    
+    .container-principal {
+        background-color: var(--cor-fundo-container);
+        width: 100%;
+        max-width: 1280px; /* Impede que o site fique muito esticado em monitores gigantes */
+        border-radius: 32px; /* Deixa os cantos da caixa arredondados */
+        padding: 40px 60px; /* Espaço interno (40px em cima/embaixo, 60px esquerda/direita) */
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Adiciona uma sombra preta suave atrás do site */
+        
+        /* Configura os elementos filhos (Header, Hero, Destaques) em uma coluna com espaços entre eles */
+        display: flex;
+        flex-direction: column; 
+        gap: 60px; /* Distância exata entre cada grande bloco */
+        
+        /* 'hidden' corta qualquer elemento (como fotos) que tentar escapar das bordas arredondadas */
+        overflow: hidden; 
+    }
+    
+    /* ==========================================================================
+        3. HEADER (CABEÇALHO)
+        ========================================================================== */
+    
+    .header {
+        display: flex; /* Coloca Logo, Menu e Ícones na mesma linha horizontal */
+        justify-content: space-between; /* Empurra um item pro começo, um pro meio, um pro fim */
+        align-items: center; /* Alinha eles verticalmente bem no centro */
+    }
+    
+    .logo {
+        font-family: var(--fonte-titulo);
+        font-size: 28px;
+        font-weight: 700; /* Deixa o texto em negrito (bold) */
+        letter-spacing: 2px; /* Espaço entre as letras para dar ar de sofisticação */
+        cursor: pointer; /* Muda o mouse para uma "mãozinha" indicando que é clicável */
+    }
+    
+    .menu-navegacao {
+        display: flex;
+        gap: 32px; /* Espaço entre os links "Lançamentos", "Masculino", etc. */
+    }
+    
+    .menu-navegacao a {
+        color: var(--cor-texto-principal);
+        text-decoration: none; /* Remove a linha chata de sublinhado que todo link tem por padrão */
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        transition: color 0.3s ease; /* Faz com que a mudança de cor (hover) seja suave, durando 0.3 segundos */
+    }
+    
+    /* Pseudo-classe ':hover'. O que acontece quando o mouse passa por cima? */
+    .menu-navegacao a:hover {
+        color: var(--cor-primaria); /* Muda para a cor laranja */
+    }
+    
+    .icones-header {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+    }
+    
+    .icone {
+        color: var(--cor-texto-principal);
+        font-size: 20px;
+        cursor: pointer;
+        /* 'position: relative' cria um ponto de âncora para a bolinha do carrinho não voar pra longe */
+        position: relative; 
+        transition: color 0.3s;
+    }
+    
+    .icone:hover {
+        color: var(--cor-primaria);
+    }
+    
+    /* A bolinha com o número '2' */
+    .badge-carrinho {
+        /* 'absolute' solta a bolinha do fluxo padrão, permitindo que eu a posicione nas coordenadas exatas */
+        position: absolute; 
+        top: -8px; /* Move para cima */
+        right: -10px; /* Move para a direita */
+        background-color: var(--cor-primaria);
+        color: white;
+        font-size: 10px;
+        font-weight: 700;
+        width: 18px;
+        height: 18px;
+        /* Centraliza o número perfeitamente dentro da bolinha */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%; /* Um raio de borda de 50% transforma um quadrado em um círculo perfeito */
+    }
+    
+    /* ==========================================================================
+        4. SEÇÃO HERO (PRINCIPAL COM O TÊNIS GRANDE)
+        ========================================================================== */
+    
+    .hero {
+        /* 'relative' para o botão de Edição Limitada não fugir desta seção */
+        position: relative; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 450px;
+        padding-top: 20px;
+    }
+    
+    .hero-conteudo {
+        display: flex;
+        flex-direction: column; /* Coloca os textos um embaixo do outro */
+        align-items: flex-start; /* Alinha os textos à esquerda da caixa */
+        gap: 16px; 
+        max-width: 50%; /* Garante que o texto não ultrapasse a metade da tela e passe por cima do tênis */
+        z-index: 2; /* "z-index" é como camadas do Photoshop. O texto fica na frente (camada 2) */
+    }
+    
+    .tag-novo {
+        color: var(--cor-primaria);
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase; /* Força todas as letras a ficarem MAIÚSCULAS */
+    }
+    
+    .titulo-hero {
+        font-family: var(--fonte-titulo);
+        font-size: 80px; 
+        line-height: 0.9; /* Diminui o espaçamento vertical entre "AXION" e "NEXUS" */
+        text-transform: uppercase;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Adiciona uma sombra atrás do texto para leitura fácil */
+    }
+    
+    .descricao-hero {
+        color: var(--cor-texto-secundario);
+        font-size: 16px;
+        line-height: 1.5; /* Altura da linha de texto (facilita leitura) */
+        margin-bottom: 10px; 
+    }
+    
+    .preco-hero {
+        font-family: var(--fonte-titulo);
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--cor-texto-principal);
+        margin-bottom: 10px;
+    }
+    
+    /* Botão laranja principal */
+    .btn-primario {
+        background-color: var(--cor-primaria);
+        color: white;
+        padding: 16px 36px; /* Espaço interno para engordar o botão */
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border: none; /* Remove bordas que navegadores costumam colocar em botões */
+        border-radius: 50px; /* Deixa as laterais arredondadas (estilo pílula) */
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.3s ease; /* Prepara o botão para animar mudanças de estado */
+    }
+    
+    .btn-primario:hover {
+        background-color: var(--cor-primaria-hover);
+        transform: translateY(-2px); /* "Levanta" o botão 2 pixels para cima ao passar o mouse. Efeito Premium! */
+    }
+    
+    .frete-texto {
+        font-size: 12px;
+        color: var(--cor-texto-secundario);
+        font-weight: 500;
+        margin-top: 4px;
+    }
+    
+    /* Tênis grande do lado direito */
+    .hero-imagem {
+        position: absolute; /* Solta a imagem do fluxo para ela flutuar */
+        right: 10%; /* Posiciona 10% da borda direita */
+        top: 50%;
+        /* 'translateY(-50%)' puxa a imagem de volta pelo seu próprio centro exato. 
+            'rotate(-15deg)' dá a inclinação esportiva no tênis. */
+        transform: translateY(-50%) rotate(-15deg); 
+        width: 600px;
+        z-index: 1; /* Fica na camada 1 (Atrás dos textos se houver sobreposição) */
+        
+        /* 🔥 MAGIA NEGRA DO CSS 🔥 
+            O tênis do banco de imagens tem um fundo preto. 'lighten' mistura as cores, 
+            removendo o fundo preto e mesclando com o nosso fundo cinza escuro. */
+        mix-blend-mode: lighten; 
+        
+        /* Adiciona uma sombra projetada com o formato do tênis (e não uma sombra quadrada) */
+        filter: drop-shadow(0 20px 30px rgba(255, 69, 0, 0.15)); 
+        pointer-events: none; /* Impede que clicar na imagem atrapalhe selecionar textos atrás dela */
+    }
+    
+    /* Botão solto no topo superior direito da seção */
+    .btn-edicao-limitada {
+        position: absolute; 
+        top: 0;
+        right: 0;
+        border: 1px solid var(--cor-texto-secundario); /* Cria uma borda contorno cinza */
+        color: var(--cor-texto-principal);
+        background: transparent; /* Remove qualquer fundo (fica transparente) */
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        z-index: 3; 
+    }
+    
+    /* ==========================================================================
+        5. SEÇÃO DESTAQUES (OS 4 CARDS)
+        ========================================================================== */
+    
+    .destaques {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .destaques-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline; /* Garante que o texto pequeno fique alinhado pela "linha inferior" do texto grande */
+        border-bottom: 1px solid var(--cor-borda); /* Desenha a linha fina dividindo a seção */
+        padding-bottom: 16px;
+    }
+    
+    .destaques-titulo {
+        font-family: var(--fonte-titulo);
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+    
+    .destaques-link {
+        color: var(--cor-primaria);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .destaques-link:hover {
+        text-decoration: underline; /* Coloca um sublinhado ao passar o mouse */
+    }
+    
+    /* Usando CSS Grid para os cards! */
+    .cards-grid {
+        display: grid; 
+        /* 'repeat(4, 1fr)' diz ao navegador: Crie exatamente 4 colunas. 
+            Cada uma deve ocupar '1fr' (uma fração igual do espaço disponível). */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 24px; /* Espaço entre cada card */
+    }
+    
+    /* Cada quadrado de produto */
+    .card {
+        background-color: #161616; /* Uma cor levemente mais clara que o fundo para dar destaque */
+        border-radius: 16px;
+        padding: 20px;
+        position: relative; /* Para a tag 'Edição Limitada' se ancorar aqui dentro */
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s, box-shadow 0.3s; /* Prepara a animação do card pulando ao passar o mouse */
+    }
+    
+    .card:hover {
+        transform: translateY(-5px); /* Efeito 3D: Pula para cima */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4); /* Efeito 3D: Aumenta a sombra */
+    }
+    
+    /* Etiqueta pequena dentro do card */
+    .card-tag {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 10px;
+        /* Usa RGBA: O último valor '0.1' diz que o fundo branco será 90% transparente */
+        background-color: rgba(255, 255, 255, 0.1); 
+        padding: 4px 10px;
+        border-radius: 4px;
+        letter-spacing: 1px;
+    }
+    
+    .card-imagem-container {
+        width: 100%;
+        height: 180px; /* Altura fixa para manter todos os cards padronizados mesmo com fotos diferentes */
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .card-imagem {
+        max-width: 100%;
+        max-height: 100%;
+        mix-blend-mode: lighten; /* Outra vez, tira o fundo das fotos de banco de imagem! */
+        transition: transform 0.3s;
+    }
+    
+    /* O que acontece com a IMAGEM quando você passa o mouse NO CARD */
+    .card:hover .card-imagem {
+        transform: scale(1.08) rotate(-5deg); /* Dá um pequeno zoom in e inclina o tênis (Estilo Nike) */
+    }
+    
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: auto; /* Truque poderoso: empurra todos os textos pro rodapé do card se sobrar espaço! */
+    }
+    
+    .card-nome {
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+    }
+    
+    .card-cores {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 4px;
+    }
+    
+    .cor-bolinha {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid #333; 
+    }
+    
+    .cor-preta { background-color: #000; }
+    .cor-branca { background-color: #fff; }
+    .cor-bege { background-color: #D2B48C; }
+    
+    .card-rodape {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .card-preco {
+        font-family: var(--fonte-titulo);
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    /* Botão redondo de "Ir para o produto" */
+    .btn-circular {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: var(--cor-primaria);
+        color: white;
+        border: none;
+        display: flex;
+        justify-content: center; /* Centraliza a setinha horizontalmente */
+        align-items: center;     /* Centraliza a setinha verticalmente */
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .btn-circular:hover {
+        background-color: var(--cor-primaria-hover);
+    }
+    
+    /* ==========================================================================
+        6. SEÇÃO BENEFÍCIOS (RODAPÉ)
+        ========================================================================== */
+    
+    .beneficios {
+        display: flex;
+        justify-content: space-between; /* Espalha os 4 benefícios criando espaçamento uniforme */
+        border-top: 1px solid var(--cor-borda); 
+        padding-top: 30px;
+    }
+    
+    .beneficio-item {
+        display: flex;
+        align-items: center;
+        gap: 16px; 
+    }
+    
+    .beneficio-icone {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background-color: #1A1A1A; /* Fundo quadradinho cinza escuro para abrigar o ícone laranja */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--cor-primaria);
+        font-size: 20px;
+    }
+    
+    .beneficio-textos {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .beneficio-titulo {
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+    
+    .beneficio-subtitulo {
+        font-size: 12px;
+        color: var(--cor-texto-secundario);
+    }
+    
+    /* ==========================================================================
+        7. RESPONSIVIDADE (MEDIA QUERIES)
+        ========================================================================== */
+    
+    /* Quando a tela tiver 1024px de largura ou menos (Tablets e telas menores), aplique estas regras: */
+    @media (max-width: 1024px) {
+        /* Troca o layout dos cards: em vez de 4 colunas, passam a ser 2 colunas */
+        .cards-grid { 
+            grid-template-columns: repeat(2, 1fr); 
+        }
+        
+        /* Diminui e reposiciona o tênis gigante */
+        .hero-imagem { 
+            width: 450px; 
+            right: 0; 
+        }
+        
+        /* Permite que os itens do rodapé quebrem para a linha debaixo se faltar espaço */
+        .beneficios { 
+            flex-wrap: wrap; 
+            gap: 20px; 
+        }
+        
+        /* Faz os benefícios ocuparem quase metade da tela cada um */
+        .beneficio-item { 
+            width: 45%; 
+        }
+    }
+    

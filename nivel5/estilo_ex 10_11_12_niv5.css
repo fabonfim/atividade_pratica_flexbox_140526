@@ -1,0 +1,68 @@
+/*reset a fim de tirar todas as configurações já existentes / prontas */
+
+* {
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body 
+{ 
+    background-color: burlywood;
+    display: flex; /*faz os elementos serem exibidos em linha */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+header
+{
+    background-color: azure;
+    border-radius: 20px;
+    width: 90%;
+    margin-top: 20px;
+}    
+
+nav
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+ul
+{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+main
+{
+    background-color: rgb(177, 250, 159);
+    width: 100%;
+}
+
+
+.cards
+{
+    width: 25%;;
+    height: 250px;
+    background-color: azure;
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
+
+#destaques
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
